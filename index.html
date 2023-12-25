@@ -51,7 +51,7 @@
             text-align: center;
             padding: 1em;
             color: #fff;
-            transition: background 1s ease-in-out;
+            background: linear-gradient(to right, #3498db, #2980b9); /* Use a specific background for the footer */
         }
     </style>
 </head>
@@ -121,9 +121,9 @@
             footer.style.background = `linear-gradient(to right, ${color1}, ${color2})`;
         }
 
-        // Update colors initially and then every 5 seconds
+        // Update colors initially and then every 0.1 seconds
         updateColors();
-        setInterval(updateColors, 1000);
+        setInterval(updateColors, 100);
     </script>
 
 </body>
