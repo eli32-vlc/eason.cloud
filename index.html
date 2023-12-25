@@ -7,6 +7,9 @@
     <title>Eason Li - Personal Website</title>
     <style>
         body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
@@ -29,7 +32,8 @@
             color: #333;
         }
 
-        h1, h2 {
+        h1,
+        h2 {
             color: #3498db;
         }
 
@@ -43,6 +47,7 @@
         }
 
         footer {
+            margin-top: auto;
             text-align: center;
             padding: 1em;
             color: #fff;
@@ -118,7 +123,7 @@
 
         // Update colors initially and then every 5 seconds
         updateColors();
-        setInterval(updateColors, 5000);
+        setInterval(updateColors, 1000);
     </script>
 
 </body>
