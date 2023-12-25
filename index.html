@@ -8,17 +8,15 @@
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            background: linear-gradient(to right, #3498db, #2980b9);
-            color: #fff;
             margin: 0;
             padding: 0;
         }
 
         header {
-            background: linear-gradient(to right, #2980b9, #1f6698);
             color: #fff;
             padding: 1em;
             text-align: center;
+            transition: background 1s ease-in-out;
         }
 
         section {
@@ -47,15 +45,15 @@
         footer {
             text-align: center;
             padding: 1em;
-            background: linear-gradient(to right, #2980b9, #1f6698);
             color: #fff;
+            transition: background 1s ease-in-out;
         }
     </style>
 </head>
 
 <body>
 
-    <header>
+    <header id="header">
         <h1>Eason Li</h1>
         <p>Welcome to My Personal Website</p>
     </header>
@@ -92,9 +90,36 @@
         </p>
     </section>
 
-    <footer>
+    <footer id="footer">
         &copy; 2023 Eason Li
     </footer>
+
+    <script>
+        // Function to generate a random hex color
+        function getRandomColor() {
+            const letters = '0123456789ABCDEF';
+            let color = '#';
+            for (let i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+
+        // Update header and footer background colors with a random gradient
+        function updateColors() {
+            const header = document.getElementById('header');
+            const footer = document.getElementById('footer');
+            const color1 = getRandomColor();
+            const color2 = getRandomColor();
+
+            header.style.background = `linear-gradient(to right, ${color1}, ${color2})`;
+            footer.style.background = `linear-gradient(to right, ${color1}, ${color2})`;
+        }
+
+        // Update colors initially and then every 5 seconds
+        updateColors();
+        setInterval(updateColors, 5000);
+    </script>
 
 </body>
 
