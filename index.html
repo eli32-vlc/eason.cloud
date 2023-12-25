@@ -26,12 +26,11 @@
         section {
             max-width: 800px;
             margin: 2em auto;
-            padding: 1em;
             background-color: #fff;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
             color: #333;
-            flex: 1;
+            padding: 1em; /* Added padding to the section */
         }
 
         h1, h2 {
@@ -52,12 +51,14 @@
             padding: 1em;
             color: #fff;
             background: linear-gradient(to right, #ffb6c1, #fff176); /* Pink to Light Yellow */
+            margin-top: auto; /* Push the footer to the bottom */
         }
 
         /* Increased the size of the contact box */
-        section h2:nth-child(4),
-        section p:nth-child(5) {
+        section h2,
+        section p {
             font-size: 1.5em;
+            margin-bottom: 0.5em; /* Adjusted the margin for better spacing */
         }
     </style>
 </head>
@@ -75,30 +76,24 @@
             Hello! I am passionate about using jailbreak tools on iPhones and currently learning Python.
             I have a home lab where I experiment with various technologies.
         </p>
-    </section>
 
-    <section>
         <h2>My Projects</h2>
         <p>
             I enjoy working on various projects related to Python development.
             Stay tuned for updates on my latest endeavors!
         </p>
-    </section>
 
-    <section>
         <h2>Interests</h2>
         <p>
             In my free time, I love watching Star Wars and playing Halo. The epic stories and fantastic
             universes in these franchises captivate my imagination.
         </p>
-    </section>
 
-    <section>
-        <!-- Increased the size of the contact box -->
+        <!-- Updated the contact section -->
         <h2>Contact</h2>
         <p>
-            Feel free to <a href="mailto:lyu6351@gmail.com">email me</a> or connect on
-            <a href="https://github.com/eli32-vlc" target="_blank">GitHub</a>.
+            Feel free to <a href="mailto:lyu6351@gmail.com">email me</a> or connect on Discord at
+            <span style="font-weight: bold;">zeniththespartan#1234</span>.
         </p>
     </section>
 
