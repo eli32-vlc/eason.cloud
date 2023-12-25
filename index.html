@@ -19,7 +19,7 @@
             color: #fff;
             padding: 1em;
             text-align: center;
-            transition: background 0.5s ease-in-out;
+            transition: background 1s ease-in-out;
         }
 
         section {
@@ -51,7 +51,7 @@
             text-align: center;
             padding: 1em;
             color: #fff;
-            transition: background 0.5s ease-in-out;
+            background: linear-gradient(to right, #3498db, #2980b9); /* Use a specific background for the footer */
         }
     </style>
 </head>
@@ -110,43 +110,20 @@
             return color;
         }
 
-        let animationFrameId;
-        let lastColorUpdate = 0;
+        // Update header and footer background colors with a random gradient
+        function updateColors() {
+            const header = document.getElementById('header');
+            const footer = document.getElementById('footer');
+            const color1 = getRandomColor();
+            const color2 = getRandomColor();
 
-        // Update header and footer background colors based on mouse position
-        function updateColors(event) {
-            const currentTime = Date.now();
-            if (currentTime - lastColorUpdate > 50) { // Debounce every 50ms
-                lastColorUpdate = currentTime;
-
-                const header = document.getElementById('header');
-                const footer = document.getElementById('footer');
-                const x = event.clientX / window.innerWidth;
-                const y = event.clientY / window.innerHeight;
-                const color1 = getRandomColor();
-                const color2 = getRandomColor();
-
-                header.style.background = `linear-gradient(to right, ${color1}, ${color2})`;
-                footer.style.background = `linear-gradient(to right, ${color1}, ${color2})`;
-
-                cancelAnimationFrame(animationFrameId);
-                animationFrameId = requestAnimationFrame(() => {
-                    header.style.background = `linear-gradient(to right, ${color1}, ${color2})`;
-                    footer.style.background = `linear-gradient(to right, ${color1}, ${color2})`;
-                });
-            }
+            header.style.background = `linear-gradient(to right, ${color1}, ${color2})`;
+            footer.style.background = `linear-gradient(to right, ${color1}, ${color2})`;
         }
 
-        // Add mousemove event listener to the body
-        document.body.addEventListener('mousemove', updateColors);
-
-        // Function to update colors initially
-        function initialUpdate() {
-            updateColors({ clientX: window.innerWidth / 2, clientY: window.innerHeight / 2 });
-        }
-
-        // Update colors initially
-        initialUpdate();
+        // Update colors initially and then every 0.1 seconds
+        updateColors();
+        setInterval(updateColors, 1000);
     </script>
 
 </body>
