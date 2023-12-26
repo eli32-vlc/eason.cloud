@@ -13,7 +13,7 @@
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background: linear-gradient(to bottom, #3498db, #2980b9); /* Background gradient */
+            background: linear-gradient(to bottom, #3498db, #2980b9); /* Initial background gradient */
         }
 
         header,
@@ -107,6 +107,34 @@
     <footer id="footer">
         &copy; 2023 Eason Li
     </footer>
+
+    <script>
+        // Function to generate a random hex color
+        function getRandomColor() {
+            const letters = '0123456789ABCDEF';
+            let color = '#';
+            for (let i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+
+        // Update header and footer background colors with a random gradient
+        function updateColors() {
+            const header = document.getElementById('header');
+            const footer = document.getElementById('footer');
+            const color1 = getRandomColor();
+            const color2 = getRandomColor();
+
+            header.style.background = `linear-gradient(to right, ${color1}, ${color2})`;
+            footer.style.background = `linear-gradient(to right, ${color1}, ${color2})`;
+            document.body.style.background = `linear-gradient(to bottom, ${color1}, ${color2})`; // Update the whole body background
+        }
+
+        // Update colors initially and then every 10 minutes
+        updateColors();
+        setInterval(updateColors, 600000); // 10 minutes in milliseconds
+    </script>
 
 </body>
 
