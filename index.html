@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eason Li - Personal Website</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, #3498db, #2980b9); /* Background gradient */
+        }
+
+        header {
+            color: #fff;
+            padding: 1em;
+            text-align: center;
+            transition: background 1s ease-in-out;
+        }
+
+        section {
+            max-width: 800px;
+            margin: 2em auto;
+            padding: 1em;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            color: #333;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: slideIn 0.5s ease-out forwards;
+        }
+
+        @keyframes slideIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1,
+        h2 {
+            color: #3498db;
+        }
+
+        a {
+            color: #2980b9;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            margin-top: auto;
+            text-align: center;
+            padding: 1em;
+            color: #fff;
+            background: linear-gradient(to top, #3498db, #2980b9); /* Background gradient for the footer */
+        }
+    </style>
+</head>
+
+<body>
+
+    <header id="header">
+        <h1>Eason Li</h1>
+        <p>Welcome to My Personal Website</p>
+    </header>
+
+    <section>
+        <h2>About Me</h2>
+        <p>
+            Hello! I am passionate about using jailbreak tools on iPhones and currently learning Python.
+            I have a home lab where I experiment with various technologies.
+        </p>
+    </section>
+
+    <section>
+        <h2>My Projects</h2>
+        <p>
+            I enjoy working on various projects related to Python development.
+            Stay tuned for updates on my latest endeavors!
+        </p>
+    </section>
+
+    <section>
+        <h2>Interests</h2>
+        <p>
+            In my free time, I love watching Star Wars and playing Halo. The epic stories and fantastic
+            universes in these franchises captivate my imagination.
+        </p>
+    </section>
+
+    <section>
+        <h2>Contact</h2>
+        <p>
+            Feel free to <a href="mailto:lyu6351@gmail.com">email me</a> or connect on
+            <a href="https://github.com/eli32-vlc" target="_blank">GitHub</a>.
+        </p>
+    </section>
+
+    <footer id="footer">
+        &copy; 2023 Eason Li
+    </footer>
+
+    <script>
+        // Function to generate a random hex color
+        function getRandomColor() {
+            const letters = '0123456789ABCDEF';
+            let color = '#';
+            for (let i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+
+        // Update header and footer background colors with a random gradient
+        function updateColors() {
+            const header = document.getElementById('header');
+            const footer = document.getElementById('footer');
+            const color1 = getRandomColor();
+            const color2 = getRandomColor();
+
+            header.style.background = `linear-gradient(to right, ${color1}, ${color2})`;
+            footer.style.background = `linear-gradient(to right, ${color1}, ${color2})`;
+        }
+
+        // Update colors initially and then every 10 seconds
+        updateColors();
+        setInterval(updateColors, 10000);
+    </script>
+
+</body>
+
+</html>
