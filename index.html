@@ -108,33 +108,6 @@
         &copy; 2023 Eason Li
     </footer>
 
-    <script>
-        // Function to generate a random hex color
-        function getRandomColor() {
-            const letters = '0123456789ABCDEF';
-            let color = '#';
-            for (let i = 0; i < 6; i++) {
-                color += letters[Math.floor(Math.random() * 16)];
-            }
-            return color;
-        }
-
-        // Update header and footer background colors with a random gradient
-        function updateColors() {
-            const header = document.getElementById('header');
-            const footer = document.getElementById('footer');
-            const color1 = getRandomColor();
-            const color2 = getRandomColor();
-
-            header.style.background = `linear-gradient(to right, ${color1}, ${color2})`;
-            footer.style.background = `linear-gradient(to right, ${color1}, ${color2})`;
-        }
-
-        // Update colors initially and then every 10 seconds
-        updateColors();
-        setInterval(updateColors, 10000);
-    </script>
-
 </body>
 
 </html>
